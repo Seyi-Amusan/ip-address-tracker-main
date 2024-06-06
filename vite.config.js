@@ -5,6 +5,6 @@ dotenv.config();
 
 export default defineConfig({
   define: {
-    'process.env': process.env
+    'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY)
   },
 });
