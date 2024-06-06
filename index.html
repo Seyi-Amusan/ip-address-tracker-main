@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+  <script type="module" defer src="main.js"></script>
+
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+</head>
+<body>
+
+  <header>
+    <h1>IP Address Tracker</h1>
+    <form>
+      <input type="text" placeholder="e.g google.com">
+      <button><img src="images/icon-arrow.svg" alt=""></button>
+    </form>
+  </header>
+
+  <main>
+    <section class="tracking-info">
+
+      <div>
+        <p class="info-header">Ip Address</p>
+        <p id="ip-address" class="info-value">172.217.12.142</p>
+      </div>
+
+      <div>
+        <p class="info-header">Location</p>
+        <p class="info-value"><span id="region">Virginia</span>, <span id="country">US</span></p>
+      </div>
+
+      <div>
+        <p class="info-header">Timezone</p>
+        <p class="info-value">UTC <span id="timezone">-04:00</span></p>
+      </div>
+
+      <div>
+        <p class="info-header">isp</p>
+        <p id="isp" class="info-value">Google LLC</p>
+      </div>
+
+    </section>
+    <section class="map" id="map">
+
+    </section>
+  </main>
+
+
+  <!-- IP Address Tracker
+
+  Search for any IP address or domain
+
+  IP Address
+  Location
+  Timezone
+    UTC add offset value dynamically using the API
+  ISP -->
+  
+</body>
+</html>
