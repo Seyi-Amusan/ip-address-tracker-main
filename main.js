@@ -17,6 +17,8 @@ btn.addEventListener('click', e => {
 
     const domain = input.value
     const url = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&domain=${domain}`
+
+    console.log(url);
     
     fetch(url)
     .then(result => result.json())
