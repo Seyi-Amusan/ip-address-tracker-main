@@ -27,6 +27,7 @@ jobs:
     - name: Create .env.production file
       run: |
         echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env.production
+        echo "Contents of .env.production:"
         cat .env.production  # Add this line to verify the content of .env.production
 
     - name: Build project
@@ -34,8 +35,10 @@ jobs:
 
     - name: Verify build output
       run: |
+        echo "Listing dist directory:"
         ls -la dist  # List the contents of the dist directory
-        cat dist/index.html  # Check the main output file for the replaced environment variables
+        echo "Checking main output file for environment variables:"
+        grep VITE_API_KEY dist/assets/*.js || echo "API Key not found in built assets"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
