@@ -28,7 +28,6 @@ jobs:
       env:
         VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
       run: |
-        # Create a .env.production file with the API key
         echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env.production
         npm run build
 
