@@ -1,11 +1,8 @@
 import { defineConfig } from 'vite';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
 
 export default defineConfig({
+  base: '/ip-address-tracker-main/', 
   define: {
-    'import.meta.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY)
+    'import.meta.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY),
   },
 });
