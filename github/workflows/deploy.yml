@@ -24,12 +24,18 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build project
-      env:
-        VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+    - name: Create .env.production file
       run: |
         echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env.production
-        npm run build
+        cat .env.production  # Add this line to verify the content of .env.production
+
+    - name: Build project
+      run: npm run build
+
+    - name: Verify build output
+      run: |
+        ls -la dist  # List the contents of the dist directory
+        cat dist/index.html  # Check the main output file for the replaced environment variables
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
