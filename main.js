@@ -9,7 +9,7 @@ const btn = document.querySelector('button')
 const input = document.querySelector('input')
 
 
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = process.env.VITE_API_KEY;
 
 
 btn.addEventListener('click', e => {
@@ -45,7 +45,7 @@ let map;
 
 function showLocationOnMap(arr) {
 
-    const key = import.meta.env.VITE_API_KEY_MAPTILER;
+    const key = process.env.VITE_API_KEY_MAPTILER;
 
     // Check if the map is already initialized
     if (map) {
