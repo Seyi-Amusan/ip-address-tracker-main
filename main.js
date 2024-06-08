@@ -20,19 +20,22 @@ btn.addEventListener('click', e => {
 
 
     fetch(url)
-    .then(result => result.json())
-    .then(data => {
-      displayDomainInfo(data);
-      return data;
-    })
-    .then(data => getLocationCoordinates(data.location.region))
-    .then(coordinates => showLocationOnMap(coordinates))
+        .then(result => result.json())
+        .then(data => {
+        displayDomainInfo(data);
+        return data;
+        })
+        .then(data => getLocationCoordinates(data.location.region))
+        .then(coordinates => showLocationOnMap(coordinates))
 })
 
 
 
 
+
 function displayDomainInfo(data) {
+
+    console.log(data);
     ip.innerText = data.ip
     region.innerText = data.location.region
     country.innerText = data.location.country
@@ -46,6 +49,7 @@ let map;
 function showLocationOnMap(arr) {
 
     const key = process.env.VITE_API_KEY_MAPTILER;
+
 
     // Check if the map is already initialized
     if (map) {
