@@ -7,7 +7,7 @@ export default defineConfig(({ command, mode }) => {
   return {
     base: '/ip-address-tracker-main/', // Ensure this matches your GitHub repository name
     define: {
-      'process.env.VITE_API_KEY': JSON.stringify(env.VITE_API_KEY),
+      // 'process.env.VITE_API_KEY': JSON.stringify(env.VITE_API_KEY),
     },
   };
 });

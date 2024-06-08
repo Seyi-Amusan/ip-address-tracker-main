@@ -18,8 +18,7 @@ btn.addEventListener('click', e => {
     const domain = input.value
     const url = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&domain=${domain}`
 
-    console.log(url);
-    
+
     fetch(url)
     .then(result => result.json())
     .then(data => {
@@ -45,8 +44,8 @@ function displayDomainInfo(data) {
 let map;
 
 function showLocationOnMap(arr) {
-    console.log(arr);
-    const key = '8A8gg771CO0aHUJydnCP';
+
+    const key = import.meta.env.VITE_API_KEY_MAPTILER;
 
     // Check if the map is already initialized
     if (map) {

@@ -34,7 +34,10 @@ jobs:
         run: npm ci
 
       - name: Create .env.production file
-        run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env.production
+        run: |
+          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env.production
+          echo "VITE_API_KEY_MAPTILER=${{ secrets.VITE_API_KEY_MAPTILER }}" >> .env.production
+
 
       - name: Build
         run: npm run build
